@@ -16,19 +16,5 @@ class MainActivity : AppCompatActivity() {
 
         fragmentTransaction.add(R.id.fragmentContainerView, helloFragment)
         fragmentTransaction.commit()
-
-        val displayTextView = findViewById<TextView>(R.id.displayTextView)
-        val nameEditText = findViewById<EditText>(R.id.nameEditText)
-        val changeButton = findViewById<Button>(R.id.changeButton)
-
-        changeButton.setOnClickListener {
-            val name = nameEditText.text
-
-            displayTextView.text = if (name.isNotBlank()) {
-                "Hello, $name!"
-            } else {
-                "Please enter your name"
-            }
-        }
     }
 }

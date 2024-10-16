@@ -11,6 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val helloFragment = HelloFragment()
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+
+        fragmentTransaction.add(R.id.fragmentContainerView, helloFragment)
+        fragmentTransaction.commit()
+
         val displayTextView = findViewById<TextView>(R.id.displayTextView)
         val nameEditText = findViewById<EditText>(R.id.nameEditText)
         val changeButton = findViewById<Button>(R.id.changeButton)
